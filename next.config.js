@@ -3,15 +3,12 @@ const nextConfig = {
   output: 'export',
   // Required for GitHub Pages
   basePath: process.env.NODE_ENV === 'production' ? '/pearl-sale' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/pearl-sale' : '',
   images: {
     unoptimized: true,
   },
-  // Ensure JavaScript is properly included
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/pearl-sale' : '',
-  // Disable server components for static export
-  experimental: {
-    appDir: true,
-  },
+  // Add trailing slash to help with path resolution
+  trailingSlash: true,
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
